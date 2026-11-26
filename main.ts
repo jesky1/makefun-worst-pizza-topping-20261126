@@ -23,7 +23,8 @@ if (
   LINE.length > 199 ||
   LINE.includes("\n") ||
   LINE !== LINE.trim() ||
-  !/pizza/i.test(LINE)
+  !/pizza/i.test(LINE) ||
+  !/gummy bear/i.test(LINE)
 ) {
   console.error(`invalid entry: ${LINE.length} chars`);
   process.exit(1);
