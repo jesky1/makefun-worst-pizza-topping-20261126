@@ -14,8 +14,17 @@ export const LINE =
 // The gate allows 1..200 characters and exactly one line: refuse to write
 // an invalid entry rather than ship a file the judge never sees. Also
 // refuse leading/trailing whitespace — a stray space would count against
-// the 200-character budget and look sloppy on the bounty page.
-if (LINE.length < 1 || LINE.length > 199 || LINE.includes("\n") || LINE !== LINE.trim()) {
+// the 200-character budget and look sloppy on the bounty page. And refuse
+// a line that never names a pizza: the judge's first rule scores such a
+// line below any line pitching a terrible pizza topping, so it is not
+// worth entering at all.
+if (
+  LINE.length < 1 ||
+  LINE.length > 199 ||
+  LINE.includes("\n") ||
+  LINE !== LINE.trim() ||
+  !/pizza/i.test(LINE)
+) {
   console.error(`invalid entry: ${LINE.length} chars`);
   process.exit(1);
 }
