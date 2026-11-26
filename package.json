@@ -1,0 +1,1 @@
+{"description":"One funny line for make.fun: a Gummy Bear pizza where the cheese melts but the bears don't","license":"MIT","name":"makefun-worst-pizza-topping-20261126","private":true,"scripts":{"start":"node main.ts","test":"node --test main.test.ts"},"type":"module","version":"1.0.0"}
